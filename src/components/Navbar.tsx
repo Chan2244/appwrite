@@ -12,7 +12,7 @@ export default function Navbar() {
             <h3 className="u-stretch eyebrow-heading-1">Idea Tracker</h3>
             {current ? (
                 <div className="main-header-end u-margin-inline-end-16">
-                    <p>{current.providerUid}</p>
+                    <p>{current.$id}</p>
                     <button 
                         className="button" 
                         type="button" 

@@ -7,7 +7,7 @@ import type { Models } from 'appwrite';
 import { useRouter } from 'next/navigation';
 
 export function useAuth() {
-    const [current, setCurrent] = useState<Models.Session | null>(null);
+    const [current, setCurrent] = useState<Models.User | null>(null);
     const [loading, setLoading] = useState(true);
     const router = useRouter();
 
@@ -21,11 +21,11 @@ export function useAuth() {
     };
 
     const login = async (email: string, password: string): Promise<void> => {
-        const session = await account.createEmailPasswordSession({
+        await account.createEmailPasswordSession({
             email,
             password
         });
-        setCurrent(session);
+        await getCurrentUser();
         router.push('/');
     };
 
