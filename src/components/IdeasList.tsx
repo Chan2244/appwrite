@@ -35,7 +35,7 @@ export default function IdeasList() {
                                     </p>
                                 )}
                             </div>
-                            {user && user.userId === idea.userId && (
+                            {user && user.$id === idea.userId && (
                                 <button
                                     onClick={() => remove(idea.$id)}
                                     className="button is-text u-padding-inline-8"
