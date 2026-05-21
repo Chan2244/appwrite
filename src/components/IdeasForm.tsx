@@ -16,7 +16,7 @@ export default function IdeasForm() {
         if (!user) return;
 
         const postIdeaData = {
-            userId: user.userId,
+            userId: user.$id,
             title: formData.get('title') as string,
             description: formData.get('description') as string,
         } as any;
